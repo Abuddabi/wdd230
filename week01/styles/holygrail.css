@@ -1,6 +1,7 @@
 body {
   display: grid;
   height: 100vh;
+  margin: 0;
   grid-template: auto auto 1fr auto / 1fr auto;
 }
 
