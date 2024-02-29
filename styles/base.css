@@ -15,6 +15,11 @@ body {
   min-height: 100vh;
 }
 
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
 ul {
   list-style: none;
 }
