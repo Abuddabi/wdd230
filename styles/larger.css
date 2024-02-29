@@ -1,0 +1,23 @@
+@media screen and (min-width: 700px) {
+  header span {
+    font-size: 32px;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav ul li {
+    flex: 1 1 100%;
+  }
+
+  main {
+    max-width: 1200px;
+  }
+
+  .cardWrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+}

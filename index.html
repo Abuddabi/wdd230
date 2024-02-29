@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Egor Sotnikov - WDD 230 - Web Frontend Development</title>
+  <meta name="description" content="WDD 230 - Web Frontend Development. Egor Sotnikov. Course assignment portal.">
+  <meta name="author" content="Egor Sotnikov">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+</head>
+
+<body>
+  <header>
+    <img src="images/profile.jpg" alt="Egor Sotnikov" width="90px" height="105px">
+    <span>Egor Sotnikov</span>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#">Chamber</a></li>
+      <li><a href="#">Site Plan</a></li>
+      <li><a href="#">Form</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>WDD 230: Web Frontend Development</h1>
+    <div class="cardWrapper">
+      <section class="card">
+        <h2>Learning Activities</h2>
+        <ul>
+          <li>
+            <span>Week 01:</span>
+            <a href="/week01/holygrail.html">Layout</a>
+            <span>|</span>
+            <a href="/week01/media-query.html">Media Query</a>
+            <span>|</span>
+            <a href="#">JS Pen</a>
+          </li>
+          <li><span>Week 02: </span></li>
+          <li><span>Week 03: </span></li>
+          <li><span>Week 04: </span></li>
+          <li><span>Week 05: </span></li>
+          <li><span>Week 06: </span></li>
+        </ul>
+      </section>
+      <section class="card information">
+        <h2>Information</h2>
+        <ul>
+          <li>Saint-Petersburg, Russia</li>
+          <li>+10 C, Rain</li>
+          <li>Page Visits: 15</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>
+      <span>&copy;<span id="jsYear"></span></span>
+      <span>😎 Egor Sotnikov 😎</span>
+      <span>Russia, Saint-Petersburg</span>
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+  <script src="scripts/getDates.js" defer></script>
+</body>
+
+</html>
