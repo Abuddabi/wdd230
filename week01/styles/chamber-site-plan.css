@@ -53,11 +53,11 @@ footer {
   background-color: var(--byuiblue);
   color: white;
   padding: 30px;
+  text-align: center;
 }
 
 header > * {
   font-size: 20px;
-  text-align: center;
 }
 
 h1 {
@@ -103,4 +103,12 @@ table.colors td {
 
 .paragraph {
   font-weight: 300;
+}
+
+section img {
+  max-width: 100%;
+}
+
+.mt40 {
+  margin-top: 40px;
 }
