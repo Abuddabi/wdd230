@@ -1,0 +1,101 @@
+:root {
+  --byuiblue: rgb(0, 110, 182);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  min-height: 60%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+main section {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+main section + section {
+  margin-top: 15px;
+}
+
+main section > * + * {
+  margin-top: 8px;
+}
+
+main section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+main section h3 {
+  font-size: 18px;
+  margin-top: 18px;
+}
+
+main ul {
+  padding-left: 15px;
+}
+
+header,
+footer {
+  background-color: var(--byuiblue);
+  color: white;
+  padding: 30px;
+}
+
+header > * {
+  font-size: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+header p {
+  margin-top: 18px;
+}
+
+table.colors {
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+table.colors th,
+table.colors td {
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.color1 {
+  color: #fdf0d5;
+}
+.color2 {
+  color: #c1121f;
+}
+.color3 {
+  color: #003049;
+}
+.color4 {
+  color: #669bbc;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.paragraph {
+  font-weight: 300;
+}
