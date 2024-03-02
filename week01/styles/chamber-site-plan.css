@@ -18,7 +18,7 @@ main {
   min-height: 60%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 main section {
@@ -66,6 +66,11 @@ h1 {
 
 header p {
   margin-top: 18px;
+}
+
+.scrollable {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 table.colors {
