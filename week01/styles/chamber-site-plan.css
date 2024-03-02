@@ -1,5 +1,8 @@
 :root {
-  --byuiblue: rgb(0, 110, 182);
+  --bg: #fdf0d5;
+  --accents1: #c1121f;
+  --headings: #003049;
+  --accents2: #669bbc;
 }
 
 * {
@@ -12,6 +15,31 @@
 html,
 body {
   height: 100%;
+  background-color: var(--bg);
+}
+
+p {
+  color: var(--accents2);
+}
+
+header,
+footer {
+  background-color: var(--headings);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+header > * {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+header p {
+  margin-top: 18px;
 }
 
 main {
@@ -35,37 +63,19 @@ main section > * + * {
 }
 
 main section h2 {
+  color: var(--headings);
   font-size: 22px;
   margin-bottom: 10px;
 }
 
 main section h3 {
+  color: var(--headings);
   font-size: 18px;
   margin-top: 18px;
 }
 
 main ul {
   padding-left: 15px;
-}
-
-header,
-footer {
-  background-color: var(--byuiblue);
-  color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-header > * {
-  font-size: 20px;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-header p {
-  margin-top: 18px;
 }
 
 .scrollable {
@@ -85,16 +95,17 @@ table.colors td {
 }
 
 .color1 {
-  color: #fdf0d5;
+  background-color: black;
+  color: var(--bg);
 }
 .color2 {
-  color: #c1121f;
+  color: var(--accents1);
 }
 .color3 {
-  color: #003049;
+  color: var(--headings);
 }
 .color4 {
-  color: #669bbc;
+  color: var(--accents2);
 }
 
 .title {
@@ -111,4 +122,8 @@ section img {
 
 .mt40 {
   margin-top: 40px;
+}
+
+.accent {
+  color: var(--accents1);
 }
