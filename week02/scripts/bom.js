@@ -16,7 +16,9 @@ function addItem() {
   const li = document.createElement('li');
   li.textContent = input.value;
   const deleteButton = document.createElement('button');
+  deleteButton.classList.add('delete');
   deleteButton.textContent = '❌';
+  deleteButton.setAttribute("aria-label", `Delete ${input.value}`);
   li.append(deleteButton);
   list.append(li);
 
