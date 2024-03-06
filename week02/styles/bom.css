@@ -43,6 +43,10 @@ button {
   gap: 1rem;
 }
 
+label {
+  margin-bottom: 8px;
+}
+
 .list {
   padding: 0.5rem;
 }

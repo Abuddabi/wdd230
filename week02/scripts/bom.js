@@ -2,7 +2,15 @@ const input = document.querySelector('#favchap');
 const button = document.querySelector('button');
 const list = document.querySelector('#list');
 
-button.addEventListener('click', () => {
+button.addEventListener('click', addItem);
+
+input.addEventListener('keydown', (event) => {
+  // Check if the Enter key was pressed
+  if (event.keyCode !== 13) return;
+  addItem();
+});
+
+function addItem() {
   if (input.value == '') return;
 
   const li = document.createElement('li');
@@ -19,5 +27,5 @@ button.addEventListener('click', () => {
 
   input.value = '';
   input.focus();
-});
+}
 
