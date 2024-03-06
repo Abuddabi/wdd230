@@ -13,8 +13,8 @@ body {
   background-color: var(--theme-bg-color);
 }
 
-body.dark {
-  --theme-text-color: white;
+body.themeDark {
+  --theme-text-color: #ccc;
   --theme-bg-color: black;
 }
 
@@ -34,7 +34,7 @@ li {
   color: var(--theme-text-color);
 }
 
-.dark a {
+.themeDark a {
   color: var(--theme-text-color);
 }
 
@@ -104,7 +104,7 @@ header > img {
   transition: transform 0.2s linear;
 }
 
-#themeToggle:checked + #switch #circle {
+body[data-theme="dark"] #circle {
   transform: translateX(24px);
 }
 

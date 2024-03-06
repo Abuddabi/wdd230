@@ -22,9 +22,30 @@ function toggleMobileMenu() {
 }
 
 function toggleTheme() {
-  const checkbox = document.querySelector("#themeToggle")
+  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const body = document.body;
+
+  function toDark() {
+    body.dataset.theme = "dark";
+    body.classList.remove("themeLight");
+    body.classList.add("themeDark");
+  }
+
+  function toLight() {
+    body.dataset.theme = "light";
+    body.classList.remove("themeDark");
+    body.classList.add("themeLight");
+  }
+  
+  if (prefersDarkMode) toDark();
+
+  const checkbox = body.querySelector("#themeToggle");
+
   checkbox.addEventListener("change", () => {
-    document.body.classList.toggle("dark");
+    const currentTheme = body.dataset.theme;
+
+    if (currentTheme == "light") toDark();
+    else if (currentTheme == "dark") toLight();
   });
 }
 
