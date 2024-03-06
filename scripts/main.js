@@ -21,6 +21,14 @@ function toggleMobileMenu() {
   });
 }
 
+function toggleTheme() {
+  const checkbox = document.querySelector("#themeToggle")
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark");
+  });
+}
+
 // run section
 checkIfGithub();
 toggleMobileMenu();
+toggleTheme();
