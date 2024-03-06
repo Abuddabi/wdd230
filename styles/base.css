@@ -43,8 +43,43 @@ header > img {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
 }
 
+nav {
+  position: relative;
+}
+
+#js-mobile-menu {
+  font-size: 2rem;
+  border: 0;
+  background: none;
+  color: #000;
+  position: absolute;
+  right: 20px;
+  top: -48px;
+  cursor: pointer;
+}
+
+#js-mobile-menu::before {
+  content: "☰";
+}
+
+.js-mobile-open #js-mobile-menu::before {
+  content: "X";
+}
+
 nav ul {
+  display: block;
+  height: 0;
+  overflow: hidden;
   background-color: black;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.5s ease;
+}
+
+.js-mobile-open ul {
+  display: block;
+  height: auto;
+  transform: scaleY(1);
 }
 
 nav a {

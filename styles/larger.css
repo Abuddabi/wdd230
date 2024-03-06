@@ -3,8 +3,14 @@
     font-size: 32px;
   }
 
+  #js-mobile-menu {
+    display: none;
+  }
+
   nav ul {
     display: flex;
+    height: auto;
+    transform: scaleY(1);
   }
 
   nav li {
