@@ -293,6 +293,7 @@ footer .footer-address {
 }
 
 .footer-info-line {
+  display: block;
   text-align: center;
   padding: 2px;
 }
