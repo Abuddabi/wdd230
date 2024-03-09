@@ -16,7 +16,7 @@ body {
 body.themeDark {
   --theme-text-color: #ccc;
   --theme-bg-color: black;
-}mo
+}
 
 * {
   padding: 0;
