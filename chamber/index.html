@@ -17,7 +17,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/normalize.css">
@@ -27,7 +27,7 @@
 
 <body>
   <header>
-    <a class="logo-link" href="index.html">
+    <a class="logo-link header-logo" href="index.html">
       <img class="logo-img" src="images/chamber-logo.webp"
         alt="Logo of Chamber of commerce in Russia, Saint-Petersburg">
     </a>
@@ -46,13 +46,75 @@
       <img class="hero-img" src="images/hero.webp" alt="Chamber of commerce. Hero image.">
       <button class="btn btn-join">Join the Chamber</button>
     </div>
-    <section class="main-section events">
-      <h2 class="main-section-header">Events</h2>
-
+    <section class="home-section events">
+      <h2 class="home-section-header">Events</h2>
+      <div class="home-section-content">
+        <p class="bold">Ribbon Cutting - The Diamond Shack</p>
+        <p>Join us for the grand opening of The Diamond Shack, Thursday at 1:00 p.m.</p>
+        <a href="#" class="more-info">more info...</a>
+      </div>
     </section>
-
+    <section class="home-section weather">
+      <h2 class="home-section-header">Weather</h2>
+      <div class="home-section-content">
+        <div class="weather-icon">⛅</div>
+        <div class="weather-temp">33°C</div>
+        <div class="weather-desc bold">Partly cloudy</div>
+        <div class="weather-hum">Humidity:</div>
+        <div class="weather-hum-value">35%</div>
+        <div class="weather-wind">Wind Chill:</div>
+        <div class="weather-wind-value">N/A</div>
+      </div>
+    </section>
+    <section class="spotlights-section">
+      <h2 class="spotlights-header">Member Spotlights</h2>
+      <div class="spotlight-item">
+        <h3 class="spotlight-header">Thankful Transport</h3>
+        <p class="spotlight-slogan">"We get it there for you!"</p>
+        <a href="#" class="spotlight-contacts">hello@thankfultransport.com</a>
+        <a href="#" class="spotlight-contacts">+999-9999-9999</a>
+        <a href="#" class="spotlight-contacts">Website</a>
+      </div>
+      <div class="spotlight-item">
+        <h3 class="spotlight-header">Code Primera</h3>
+        <p class="spotlight-slogan">After school coding!</p>
+        <a href="#" class="spotlight-contacts">contact@codeprimera.com</a>
+        <a href="#" class="spotlight-contacts">+999-9999-9999</a>
+        <a href="#" class="spotlight-contacts">Website</a>
+      </div>
+      <div class="spotlight-item">
+        <h3 class="spotlight-header">Build A Treefort</h3>
+        <p class="spotlight-slogan">Over 1000 Plans!</p>
+        <a href="#" class="spotlight-contacts">builda@treefort.com</a>
+        <a href="#" class="spotlight-contacts">+888-8888-8888</a>
+        <a href="#" class="spotlight-contacts">Website</a>
+      </div>
+    </section>
   </main>
-  <footer></footer>
+  <footer>
+    <div class="footer-logo-container">
+      <a class="logo-link" href="index.html">
+        <img class="logo-img" src="images/chamber-logo.webp"
+          alt="Logo of Chamber of commerce in Russia, Saint-Petersburg">
+      </a>
+      <p class="site-name">
+        <span>Chamber of Commerce</span>
+        <span>in Russia Saint-Petersburg</span>
+      </p>
+      <p class="footer-address">Lenina street, building 1, office 1, 191190</p>
+    </div>
+    <div class="footer-contacts-container">
+      <a href="#" class="footer-contacts">info@saint-petersburgcc.org</a>
+      <a href="#" class="footer-contacts">+(111) 2222-3333</a>
+      <a href="#" class="footer-contacts">Location Map</a>
+    </div>
+    <div class="footer-info-container">
+      <p class="footer-info-line">©<span id="js-copyright-year">2024</span> Chamber of Commerce</p>
+      <p class="footer-info-line footer-author">Egor Sotnikov</p>
+      <p class="footer-info-line">WDD 230 Project</p>
+      <p class="footer-info-line">Last Modification: <span id="js-last-mod">11/20/2024 06:59:40</span></p>
+    </div>
+  </footer>
 </body>
 
 </html>
