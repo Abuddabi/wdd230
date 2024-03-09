@@ -59,6 +59,12 @@
 }
 
 @media screen and (min-width: 850px) {
+  .site-name {
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+  }
+
   .footer-info-container {
     display: flex;
     padding-left: 20px;

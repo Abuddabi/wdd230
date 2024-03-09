@@ -51,11 +51,14 @@ header > * {
   flex: 1 1 auto;
 }
 
+.logo-link {
+  max-width: 170px;
+}
+
 header .logo-link {
   display: flex;
   align-self: center;
   width: 20%;
-  max-width: 300px;
 }
 
 .site-name {
@@ -248,7 +251,7 @@ footer * {
 .footer-logo-container {
   padding: 20px 20px 0;
   display: grid;
-  grid-template: auto auto / 30% 70%;
+  grid-template: auto auto / minmax(30%, 170px) 70%;
 }
 
 footer .logo-link {
@@ -282,7 +285,7 @@ footer .footer-address {
 .footer-info-container {
   background-color: var(--black);
   margin-top: 20px;
-  padding: 18px 0 5px;
+  padding: 18px 0;
 }
 
 .footer-info-container * {
