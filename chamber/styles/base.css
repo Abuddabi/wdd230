@@ -1,8 +1,8 @@
 :root {
-  --white: #f5f5f5;
+  --white: #ffffff;
   --black: #252323;
-  --gray: #cdcdcb;
-  --blue: #006eb6;
+  --gray: #f5f5f5;
+  --blue: #006eb8;
   --orange: #f57e00;
 }
 
@@ -40,7 +40,7 @@ h4 {
 }
 
 header {
-  padding: 5px 18px;
+  padding: 5px 3%;
   background-color: var(--blue);
   display: flex;
   justify-content: space-between;
@@ -54,19 +54,19 @@ header > * {
 header .logo-link {
   display: flex;
   align-self: center;
-  max-width: 25%;
+  max-width: 20%;
 }
 
 .site-name {
-  font-size: 17px;
+  font-size: 16px;
   margin: 0;
-}
-
-header .site-name {
-  padding-left: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+header .site-name {
+  padding-left: 6%;
 }
 
 .site-name span {
@@ -105,9 +105,9 @@ header .site-name {
 
 .home-section {
   background-color: var(--gray);
-  border: 1px solid var(--black);
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 30px;
+  box-shadow: -1px 4px 12px -2px var(--black);
 }
 
 .home-section-header {
@@ -124,7 +124,8 @@ header .site-name {
   text-decoration: none;
   display: inline-block;
   margin-top: 4px;
-  color: var(--orange);
+  color: var(--blue);
+  font-weight: bold;
 }
 
 .more-info:hover {
@@ -152,7 +153,7 @@ header .site-name {
 }
 
 .spotlights-section {
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 0 20px;
 }
 
@@ -163,8 +164,9 @@ header .site-name {
 
 .spotlight-item {
   background-color: var(--gray);
-  margin-top: 8px;
+  margin-top: 20px;
   padding: 15px;
+  box-shadow: -1px 4px 12px -2px var(--black);
 }
 
 .spotlight-header {
@@ -184,8 +186,7 @@ header .site-name {
 }
 
 footer {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 50px;
   background-color: var(--blue);
 }
 
@@ -194,8 +195,9 @@ footer * {
 }
 
 .footer-logo-container {
+  padding: 20px 20px 0;
   display: grid;
-  grid-template: 1fr 1fr / 30% 70%;
+  grid-template: auto auto / 30% 70%;
 }
 
 footer .logo-link {
@@ -227,9 +229,9 @@ footer .footer-address {
 }
 
 .footer-info-container {
+  background-color: var(--black);
   margin-top: 20px;
   padding: 18px 0 5px;
-  border-top: 1px solid var(--black);
 }
 
 .footer-info-container * {
