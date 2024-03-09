@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
@@ -36,9 +37,13 @@
       <span>in Russia Saint-Petersburg</span>
     </h1>
   </header>
-  <nav>
+  <nav class="">
+    <button id="js-mob-menu-btn"></button>
     <ul>
-      <li><a href="#"></a></li>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="#">Discover</a></li>
+      <li><a href="#">Directory</a></li>
+      <li><a href="#">Join</a></li>
     </ul>
   </nav>
   <main>
@@ -46,48 +51,52 @@
       <img class="hero-img" src="images/hero.webp" alt="Chamber of commerce. Hero image.">
       <button class="btn btn-join">Join the Chamber</button>
     </div>
-    <section class="home-section events">
-      <h2 class="home-section-header">Events</h2>
-      <div class="home-section-content">
-        <p class="bold">Ribbon Cutting - The Diamond Shack</p>
-        <p>Join us for the grand opening of The Diamond Shack, Thursday at 1:00 p.m.</p>
-        <a href="#" class="more-info">more info...</a>
-      </div>
-    </section>
-    <section class="home-section weather">
-      <h2 class="home-section-header">Weather</h2>
-      <div class="home-section-content">
-        <div class="weather-icon">⛅</div>
-        <div class="weather-temp">33°C</div>
-        <div class="weather-desc bold">Partly cloudy</div>
-        <div class="weather-hum">Humidity:</div>
-        <div class="weather-hum-value">35%</div>
-        <div class="weather-wind">Wind Chill:</div>
-        <div class="weather-wind-value">N/A</div>
-      </div>
-    </section>
+    <div class="home-sections-container">
+      <section class="home-section events">
+        <h2 class="home-section-header">Events</h2>
+        <div class="home-section-content">
+          <p class="bold">Ribbon Cutting - The Diamond Shack</p>
+          <p>Join us for the grand opening of The Diamond Shack, Thursday at 1:00 p.m.</p>
+          <a href="#" class="more-info">more info...</a>
+        </div>
+      </section>
+      <section class="home-section weather">
+        <h2 class="home-section-header">Weather</h2>
+        <div class="home-section-content">
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temp">33°C</div>
+          <div class="weather-desc bold">Partly cloudy</div>
+          <div class="weather-hum">Humidity:</div>
+          <div class="weather-hum-value">35%</div>
+          <div class="weather-wind">Wind Chill:</div>
+          <div class="weather-wind-value">N/A</div>
+        </div>
+      </section>
+    </div>
     <section class="spotlights-section">
       <h2 class="spotlights-header">Member Spotlights</h2>
-      <div class="spotlight-item">
-        <h3 class="spotlight-header">Thankful Transport</h3>
-        <p class="spotlight-slogan">"We get it there for you!"</p>
-        <a href="#" class="spotlight-contacts">hello@thankfultransport.com</a>
-        <a href="#" class="spotlight-contacts">+999-9999-9999</a>
-        <a href="#" class="spotlight-contacts">Website</a>
-      </div>
-      <div class="spotlight-item">
-        <h3 class="spotlight-header">Code Primera</h3>
-        <p class="spotlight-slogan">After school coding!</p>
-        <a href="#" class="spotlight-contacts">contact@codeprimera.com</a>
-        <a href="#" class="spotlight-contacts">+999-9999-9999</a>
-        <a href="#" class="spotlight-contacts">Website</a>
-      </div>
-      <div class="spotlight-item">
-        <h3 class="spotlight-header">Build A Treefort</h3>
-        <p class="spotlight-slogan">Over 1000 Plans!</p>
-        <a href="#" class="spotlight-contacts">builda@treefort.com</a>
-        <a href="#" class="spotlight-contacts">+888-8888-8888</a>
-        <a href="#" class="spotlight-contacts">Website</a>
+      <div class="spotlight-items-container">
+        <div class="spotlight-item">
+          <h3 class="spotlight-header">Thankful Transport</h3>
+          <p class="spotlight-slogan">"We get it there for you!"</p>
+          <a href="#" class="spotlight-contacts">hello@thankfultransport.com</a>
+          <a href="#" class="spotlight-contacts">+999-9999-9999</a>
+          <a href="#" class="spotlight-contacts">Website</a>
+        </div>
+        <div class="spotlight-item">
+          <h3 class="spotlight-header">Code Primera</h3>
+          <p class="spotlight-slogan">After school coding!</p>
+          <a href="#" class="spotlight-contacts">contact@codeprimera.com</a>
+          <a href="#" class="spotlight-contacts">+999-9999-9999</a>
+          <a href="#" class="spotlight-contacts">Website</a>
+        </div>
+        <div class="spotlight-item">
+          <h3 class="spotlight-header">Build A Treefort</h3>
+          <p class="spotlight-slogan">Over 1000 Plans!</p>
+          <a href="#" class="spotlight-contacts">builda@treefort.com</a>
+          <a href="#" class="spotlight-contacts">+888-8888-8888</a>
+          <a href="#" class="spotlight-contacts">Website</a>
+        </div>
       </div>
     </section>
   </main>
