@@ -23,8 +23,9 @@
 
   .home-sections-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     column-gap: 10px;
+    padding: 0 10px;
   }
 
   .spotlight-items-container {
@@ -63,6 +64,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: left;
+  }
+
+  .hero-container {
+    padding-top: 30%;
   }
 
   .footer-info-container {
