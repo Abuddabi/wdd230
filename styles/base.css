@@ -14,7 +14,7 @@ body {
 }
 
 body.themeDark {
-  --theme-text-color: #ccc;
+  --theme-text-color: #eaeaea;
   --theme-bg-color: black;
 }
 
