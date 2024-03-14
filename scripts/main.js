@@ -36,7 +36,7 @@ function toggleTheme() {
     body.classList.remove("themeDark");
     body.classList.add("themeLight");
   }
-  
+
   if (prefersDarkMode) toDark();
 
   const checkbox = body.querySelector("#themeToggle");
@@ -49,7 +49,17 @@ function toggleTheme() {
   });
 }
 
+function checkVisits() {
+  const visitEl = document.querySelector("#js-visits");
+  const visitsLSKey = "numbOfVisits";
+  let numVisits = Number(window.localStorage.getItem(visitsLSKey)) || 0;
+  visitEl.textContent = numVisits > 0 ? numVisits : "This is your first visit. 🥳 Welcome!";
+  numVisits++;
+  localStorage.setItem(visitsLSKey, numVisits);
+}
+
 // run section
 checkIfGithub();
 toggleMobileMenu();
 toggleTheme();
+checkVisits();

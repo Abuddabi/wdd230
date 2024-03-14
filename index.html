@@ -9,7 +9,7 @@
   <meta name="description" content="WDD 230 - Web Frontend Development. Egor Sotnikov. Course assignment portal.">
   <meta name="author" content="Egor Sotnikov">
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
     </div>
   </header>
   <nav>
-    <button id="js-mobile-menu"></button>
+    <button id="js-mobile-menu" aria-label="Mobile Menu Toggle"></button>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="chamber/">Chamber</a></li>
@@ -47,51 +47,70 @@
     </ul>
   </nav>
   <main>
-    <h1>WDD 230: Web Frontend Development</h1>
-    <div class="cardWrapper">
-      <section class="card activities">
-        <h2>Learning Activities</h2>
-        <ul>
-          <li>
-            <span>Week 01:</span>
-            <a href="week01/holygrail.html">Layout</a>
-            <span>|</span>
-            <a href="week01/media-query.html">Media Query</a>
-            <span>|</span>
-            <a href="https://codepen.io/Abuddabi/pen/MWRgVYe">JS Pen</a>
-          </li>
-          <li>
-            <span>Week 02:</span>
-            <a href="week02/design.html">Design</a>
-            <span>|</span>
-            <a href="https://codepen.io/Abuddabi/pen/JjVYGqm">Hamburger</a>
-            <span>|</span>
-            <a href="week02/bom.html">BOM</a>
-          </li>
-          <li>
-            <span>Week 03: </span>
-            <a href="week03/images/landscape.webp">WebP</a>
-            <span>|</span>
-            <a href="week03/lazyload.html">Lazyload</a>
-            <span>|</span>
-            <a href="week03/responsive-images.html">srcset</a>
-            <span>|</span>
-            <a href="week03/bom.html">localStorage</a>
-          </li>
-          <li><span>Week 04: </span></li>
-          <li><span>Week 05: </span></li>
-          <li><span>Week 06: </span></li>
-        </ul>
-      </section>
-      <section class="card information">
-        <h2>Information</h2>
-        <ul>
-          <li>Saint-Petersburg, Russia</li>
-          <li>+10 C, Rain</li>
-          <li>Page Visits: 15</li>
-        </ul>
-      </section>
+    <div class="hero">
+      <picture>
+        <source srcset="images/hero-small.webp" media="(max-width: 400px)">
+        <img src="images/hero-medium.webp" alt="Hero image" width="960" height="480">
+      </picture>
+      <span class="herolabel">Mexico City Mexico Temple</span>
     </div>
+    <div class="main-content">
+      <h1>WDD 230: Web Frontend Development</h1>
+      <div class="cardWrapper">
+        <section class="card activities">
+          <h2>Learning Activities</h2>
+          <ul>
+            <li>
+              <span class="week-number">Week 01:</span>
+              <span class="week-info">
+                <a href="week01/holygrail.html">Layout</a>
+                <span>|</span>
+                <a href="week01/media-query.html">Media Query</a>
+                <span>|</span>
+                <a href="https://codepen.io/Abuddabi/pen/MWRgVYe">JS Pen</a>
+              </span>
+            </li>
+            <li>
+              <span class="week-number">Week 02:</span>
+              <span class="week-info">
+                <a href="week02/design.html">Design</a>
+                <span>|</span>
+                <a href="https://codepen.io/Abuddabi/pen/JjVYGqm">Hamburger</a>
+                <span>|</span>
+                <a href="week02/bom.html">BOM</a>
+              </span>
+            </li>
+            <li>
+              <span class="week-number">Week 03: </span>
+              <span class="week-info">
+                <a href="week03/images/landscape.webp">WebP</a>
+                <span>|</span>
+                <a href="week03/lazyload.html">Lazyload</a>
+                <span>|</span>
+                <a href="week03/responsive-images.html">srcset</a>
+                <span>|</span>
+                <a href="week03/bom.html">localStorage</a>
+              </span>
+            </li>
+            <li><span class="week-number">Week 04: </span><span class="week-info"></span></li>
+            <li><span class="week-number">Week 05: </span><span class="week-info"></span></li>
+            <li><span class="week-number">Week 06: </span><span class="week-info"></span></li>
+          </ul>
+        </section>
+        <section class="card information">
+          <h2>Information</h2>
+          <ul>
+            <li>Saint-Petersburg, Russia</li>
+            <li>+10 C, Rain</li>
+            <li>Page Visits: <span id="js-visits"></span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <iframe id="google-map-iframe"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187465.76007092305!2d30.031585242940025!3d59.9852501244304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696378cc74a65ed%3A0x6dc7673fab848eff!2sSt%20Petersburg%2C%20Russia!5e0!3m2!1sen!2smx!4v1710443530660!5m2!1sen!2smx"
+      width="960" height="480" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </main>
   <footer>
     <p>

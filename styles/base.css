@@ -78,6 +78,7 @@ header > img {
   height: 18px;
   overflow: hidden;
   font-size: 15px;
+  color: white;
 }
 
 #switch {
@@ -162,10 +163,44 @@ nav a:hover {
 }
 
 main {
-  padding: 0 var(--main-padding) 40px;
+  padding-bottom: 40px;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero picture {
+  display: block;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.herolabel {
+  position: absolute;
+  width: 218px;
+  font-size: 15px;
+  text-align: center;
+  bottom: 20px;
+  right: calc(50% - 109px);
+  background-color: var(--theme-bg-color);
+  color: var(--theme-text-color);
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 3rem #fff;
+  opacity: 0.6;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.main-content {
+  padding: 0 20px 40px;
 }
 
 h1 {
@@ -190,12 +225,29 @@ h1 {
 }
 
 .card ul {
-  padding: 15px;
+  padding: 15px 15px 8px;
+}
+
+.card li {
+  margin-bottom: 7px;
+}
+
+.week-number {
+  min-width: 70px;
+  padding-right: 5px;
+}
+
+.card.activities li {
+  display: flex;
 }
 
 .card.information li {
   text-align: center;
   margin: 10px;
+}
+
+#google-map-iframe {
+  max-width: 100%;
 }
 
 footer {
