@@ -22,22 +22,31 @@ function toggleMobileMenu() {
 }
 
 function toggleTheme() {
-  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const body = document.body;
+  const themeLSKey = "theme";
 
   function toDark() {
     body.dataset.theme = "dark";
     body.classList.remove("themeLight");
     body.classList.add("themeDark");
+    localStorage.setItem(themeLSKey, "dark");
   }
 
   function toLight() {
     body.dataset.theme = "light";
     body.classList.remove("themeDark");
     body.classList.add("themeLight");
+    localStorage.setItem(themeLSKey, "light");
   }
 
-  if (prefersDarkMode) toDark();
+  const themeFromLS = window.localStorage.getItem(themeLSKey) || false;
+
+  if (!themeFromLS) {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDarkMode) toDark();
+  }
+  else if (themeFromLS == "dark") toDark();
+  /* by default the theme is Light */
 
   const checkbox = body.querySelector("#themeToggle");
 
