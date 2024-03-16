@@ -7,3 +7,67 @@ mobMenuBtn.addEventListener("click", function () {
 
 const lastModifiedEl = document.querySelector("#js-last-mod");
 lastModifiedEl.textContent = document.lastModified;
+
+function getMonthInfo(monthIndex, year) {
+  const monthInfo = {};
+
+  monthInfo.daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+  const monthDate = new Date(year, monthIndex, 1);
+  monthInfo.firstDayOfWeek = monthDate.getDay();
+  monthInfo.monthName = monthDate.toLocaleString('default', { month: 'long' });
+
+  return monthInfo;
+}
+
+function updateCalendar() {
+  const calendar = document.querySelector("#js-calendar");
+  if (!calendar) return;
+
+  const month = calendar.querySelector("#js-month");
+  const datesContainer = calendar.querySelector("#js-calendar-dates");
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth();
+  const currentDay = currentDate.getDate();
+  let monthIndex = currentMonth;
+  let year = 2024;
+
+  function populateCalendar(monthIndex) {
+    const monthInfo = getMonthInfo(monthIndex, year);
+    month.textContent = `${monthInfo.monthName}, ${year}`;
+
+    datesContainer.innerHTML = "";
+    for (let i = 0; i < monthInfo.firstDayOfWeek; i++) {
+      const span = document.createElement("span");
+      datesContainer.appendChild(span);
+    }
+
+    for (let i = 1; i <= monthInfo.daysInMonth; i++) {
+      const span = document.createElement("span");
+      span.textContent = i;
+      if (monthIndex == currentMonth && i == currentDay) span.classList.add("current");
+      datesContainer.appendChild(span);
+    }
+  }
+
+  populateCalendar(monthIndex);
+
+  const arrows = calendar.querySelectorAll(".js-arrow");
+  arrows.forEach(arrow => arrow.addEventListener("click", function () {
+    const dir = this.dataset.dir;
+
+    if (dir == "left") monthIndex--;
+    else if (dir == "right") monthIndex++;
+
+    if (monthIndex < 0) {
+      monthIndex = 11;
+      year--;
+    } else if (monthIndex > 11) {
+      monthIndex = 0;
+      year++;
+    }
+
+    populateCalendar(monthIndex);
+  }));
+}
+
+updateCalendar();

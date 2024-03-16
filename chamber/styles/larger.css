@@ -57,6 +57,10 @@
   .footer-contacts-container {
     padding-right: 20px;
   }
+
+  .discover .main-content {
+    padding: 0 20px;
+  }
 }
 
 @media screen and (min-width: 850px) {
@@ -80,5 +84,23 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: start;
+  }
+
+  .discover main {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .discover .sidebar {
+    padding: 0 2% 0 40px;
+  }
+
+  .discover .main-content {
+    max-width: 900px;
+  }
+
+  .discover-figure:hover {
+    box-shadow: 0 0 50px #333;
   }
 }

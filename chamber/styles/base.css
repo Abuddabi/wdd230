@@ -297,3 +297,107 @@ footer .footer-address {
   text-align: center;
   padding: 2px;
 }
+
+/* Discover page */
+
+.discover main {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discover .sidebar {
+  max-width: 400px;
+  padding-bottom: 40px;
+}
+
+.demographics,
+.facts {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.demographics h2,
+.facts h2 {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.discover section + section {
+  margin-top: 10px;
+}
+
+.facts li {
+  margin-bottom: 8px;
+}
+
+.calendar {
+  border: 1px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.calendar-nav {
+  display: flex;
+  background: lightgrey;
+}
+
+.calendar .month {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.calendar .arrow {
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 100%;
+  padding: 10px 15px;
+}
+
+.calendar-body {
+  padding: 5px 5px 10px;
+}
+
+.calendar-weekdays span {
+  display: inline-block;
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.calendar-dates {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-dates span {
+  display: inline-block;
+  width: calc(100% / 7);
+  text-align: center;
+  line-height: 120%;
+  padding: 5px;
+}
+
+.calendar-dates span.current {
+  color: red;
+  font-weight: bold;
+  outline: 3px solid red;
+}
+
+.discover-figure {
+  margin-bottom: 30px;
+}
+
+.discover-figure figcaption {
+  padding: 10px;
+}
+
+.discover-picture {
+  width: 100%;
+  height: auto;
+}
