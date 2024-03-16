@@ -61,9 +61,8 @@
   .discover .main-content {
     padding: 0 20px;
   }
-}
 
-@media screen and (min-width: 850px) {
+  /* Should be in 850px media query */
   .site-name {
     flex-direction: row;
     align-items: center;
