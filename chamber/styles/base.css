@@ -313,13 +313,15 @@ footer .footer-address {
 }
 
 .demographics,
-.facts {
+.facts,
+.visits {
   border: 1px solid black;
   padding: 20px;
 }
 
 .demographics h2,
-.facts h2 {
+.facts h2,
+.visits h2 {
   font-size: 20px;
   padding-bottom: 10px;
 }

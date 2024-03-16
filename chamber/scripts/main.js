@@ -70,4 +70,30 @@ function updateCalendar() {
   }));
 }
 
+function checkVisits() {
+  const visitsEl = document.querySelector("#js-visits");
+  if (!visitsEl) return;
+
+  const visitsLSKey = "lastVisitInMillisec";
+  const msToDays = 84600000; /* milliseconds in a day */
+  const now = Date.now();
+  let visitPhrase = "";
+  const lastVisit = Number(window.localStorage.getItem(visitsLSKey)) || 0;
+  const between = now - lastVisit;
+
+  if (lastVisit == 0) {
+    visitPhrase = "Welcome! Let us know if you have any questions.";
+  } else if (between < msToDays) {
+    visitPhrase = "Back so soon! Awesome!";
+  } else {
+    const betweenDays = (between / msToDays).toFixed();
+    const s = betweenDays > 1 ? "s" : "";
+    visitPhrase = `You last visited ${betweenDays} day${s} ago.`;
+  }
+  visitsEl.textContent = visitPhrase;
+  localStorage.setItem(visitsLSKey, now);
+}
+
+/* RUN SECTION */
 updateCalendar();
+checkVisits();

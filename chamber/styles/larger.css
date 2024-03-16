@@ -100,6 +100,10 @@
     max-width: 900px;
   }
 
+  .discover-figure {
+    border-radius: 0 0 10px 10px;
+  }
+
   .discover-figure:hover {
     box-shadow: 0 0 50px #333;
   }
