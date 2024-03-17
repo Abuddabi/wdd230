@@ -386,9 +386,10 @@ footer .footer-address {
 }
 
 .calendar-dates span.current {
-  color: red;
+  color: var(--black);
   font-weight: bold;
-  outline: 3px solid red;
+  outline: 3px solid var(--black);
+  background-color: var(--orange);
 }
 
 .discover-figure {
