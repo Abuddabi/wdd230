@@ -30,7 +30,8 @@ h1,
 h2,
 h3,
 span,
-li {
+li,
+option {
   color: var(--theme-text-color);
 }
 

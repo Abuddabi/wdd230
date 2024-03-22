@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Egor Sotnikov">
+  <title>Form</title>
+  <meta name="description" content="Form page">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+
+<body class="themeLight" data-theme="light">
+  <header>
+    <img src="images/profile.webp" alt="Egor Sotnikov" width="90" height="105">
+    <span>Egor Sotnikov</span>
+    <div class="themeToggleContainer">
+      <input type="checkbox" id="themeToggle">
+      <label id="switch" for="themeToggle">
+        <span class="themeIcon">🌙</span>
+        <span class="themeIcon">🌞</span>
+        <span id="circle"></span>
+      </label>
+    </div>
+  </header>
+  <nav>
+    <button id="js-mobile-menu" aria-label="Mobile Menu Toggle"></button>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="chamber/">Chamber</a></li>
+      <li><a href="week01/chamber-site-plan.html">Site Plan</a></li>
+      <li><a href="form.html">Form</a></li>
+    </ul>
+  </nav>
+  <main>
+    <form class="form" action="record.html" method="get">
+      <label class="input-label">
+        <span class="label-value">Username:</span>
+        <input type="text" id="username" name="username" required>
+      </label>
+      <label class="input-label">
+        <span class="label-value">Password:</span>
+        <input type="password" id="js-password" name="password" pattern="[A-Za-z0-9]{8}" required
+          title="Must be at least eight (8) characters long and can only be alpha-numeric">
+      </label>
+      <label class="input-label">
+        <span class="label-value">Confirm Password:</span>
+        <input type="password" id="js-password2" name="password" pattern="[A-Za-z0-9]{8}" required
+          title="Must be at least eight (8) characters long and can only be alpha-numeric">
+      </label>
+      <label class="input-label">
+        <span class="label-value">Email:</span>
+        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" required
+          title="Please enter a valid email address">
+      </label>
+      <label class="input-label">
+        <span class="label-value">Page Rating: <span class="rangevalue" id="js-rangevalue">1</span> </span>
+        <input type="range" id="js-range" name="range" title="Allow values from 1 to 10 with a step of 1" min="1"
+          max="10" value="1" step="1">
+        <datalist class="rangevalues">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </datalist>
+      </label>
+      <button class="submit-button" type="submit">Submit</button>
+    </form>
+  </main>
+  <footer>
+    <p>
+      <span>&copy;<span id="jsYear"></span></span>
+      <span>😎 Egor Sotnikov 😎</span>
+      <span>Russia, Saint-Petersburg</span>
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+  <script src="scripts/form.js" type="module"></script>
+</body>
+
+</html>
