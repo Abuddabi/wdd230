@@ -60,6 +60,8 @@ function toggleTheme() {
 
 function checkVisits() {
   const visitEl = document.querySelector("#js-visits");
+  if (!visitEl) return;
+
   const visitsLSKey = "numbOfVisits";
   let numVisits = Number(window.localStorage.getItem(visitsLSKey)) || 0;
   visitEl.textContent = numVisits > 0 ? numVisits : "This is your first visit. 🥳 Welcome!";

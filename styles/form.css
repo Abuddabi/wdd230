@@ -1,16 +1,18 @@
 :root {
-  
+  --shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+  --light-green: rgb(142, 237, 142);
+  --max-width: 500px;
 }
 
-main {
-  padding-top: 40px;
+.bold {
+  font-weight: bold;
 }
 
 .form {
   max-width: 90%;
-  margin: 0 auto;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
-  padding: 15px;
+  margin: 40px auto 0;
+  box-shadow: var(--shadow);
+  padding: 40px 15px 15px;
   border-radius: 6px;
 }
 
@@ -22,14 +24,39 @@ main {
 
 .label-value {
   display: block;
+  padding-bottom: 2px;
 }
 
-input {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  background-color: #eee;
+  display: block;
+  border: solid 1px #999;
+  border-radius: 6px;
+  padding: 0.75rem;
+  appearance: none;
+}
+
+input[type="range"] {
   width: 100%;
 }
 
-.submit-button {
-  /* margin-top: 25px; */
+input:required {
+  border-bottom: solid 8px red;
+}
+
+input:required:valid {
+  border-color: green;
+}
+
+.submit {
+  padding: 0.75rem;
+  cursor: pointer;
+  background-color: var(--light-green);
+  border: 1px solid grey;
+  border-radius: 6px;
 }
 
 .rangevalue {
@@ -58,8 +85,48 @@ input {
   left: 50%;
 }
 
+.password-error-msg {
+  display: none;
+  height: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 6px;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.password-error-msg.active {
+  display: block;
+  height: auto;
+}
+
+.record-body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.record-body .content {
+  max-width: 90%;
+  box-shadow: var(--shadow);
+  padding: 15px 30px 30px;
+  border-radius: 6px;
+}
+
+.record-body h1 {
+  font-size: 21px;
+}
+
 @media screen and (min-width: 700px) {
   .form {
-    max-width: 500px;
+    max-width: var(--max-width);
+  }
+
+  .record-body .content {
+    width: 100%;
+    max-width: var(--max-width);
   }
 }

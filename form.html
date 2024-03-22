@@ -30,13 +30,14 @@
   <nav>
     <button id="js-mobile-menu" aria-label="Mobile Menu Toggle"></button>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="chamber/">Chamber</a></li>
       <li><a href="week01/chamber-site-plan.html">Site Plan</a></li>
-      <li><a href="form.html">Form</a></li>
+      <li><a href="form.html" class="active">Form</a></li>
     </ul>
   </nav>
   <main>
+    <h1>Web Form</h1>
     <form class="form" action="record.html" method="get">
       <label class="input-label">
         <span class="label-value">Username:</span>
@@ -49,12 +50,13 @@
       </label>
       <label class="input-label">
         <span class="label-value">Confirm Password:</span>
-        <input type="password" id="js-password2" name="password" pattern="[A-Za-z0-9]{8}" required
+        <input type="password" id="js-password2" name="password2" pattern="[A-Za-z0-9]{8}" required
           title="Must be at least eight (8) characters long and can only be alpha-numeric">
+        <span class="password-error-msg" id="js-password-error-msg"></span>
       </label>
       <label class="input-label">
         <span class="label-value">Email:</span>
-        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" required
+        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@byui\.edu" required
           title="Please enter a valid email address">
       </label>
       <label class="input-label">
@@ -74,7 +76,7 @@
           <option value="10">10</option>
         </datalist>
       </label>
-      <button class="submit-button" type="submit">Submit</button>
+      <input class="submit" type="submit" value="Send my Review">
     </form>
   </main>
   <footer>
@@ -85,7 +87,8 @@
     </p>
     <p id="lastModified"></p>
   </footer>
-  <script src="scripts/form.js" type="module"></script>
+  <script src="scripts/main.js" type="module"></script>
+  <script src="scripts/form.js"></script>
 </body>
 
 </html>
