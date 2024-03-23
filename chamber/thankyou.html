@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Chamber of Commerce in Russia, Saint-Petersburg. Thank you page.</title>
+  <meta name="description" content="Apply to join the chamber of commerce through a membership application form here.">
+  <meta name="author" content="Egor Sotnikov">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <meta property="og:title"
+    content="The Chamber of Commerce in Russia, Saint-Petersburg. The application is finished here.">
+  <meta property="og:description"
+    content="Apply to join the chamber of commerce through a membership application form here.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://abuddabi.github.io/wdd230/chamber/images/chamber-logo.webp">
+  <meta property="og:url" content="https://abuddabi.github.io/wdd230/chamber/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+
+<body class="thankyou-page">
+  <header>
+    <a class="logo-link header-logo" href="index.html">
+      <img class="logo-img" src="images/chamber-logo.webp"
+        alt="Logo of Chamber of commerce in Russia, Saint-Petersburg">
+    </a>
+    <h1 class="site-name">
+      <span>Chamber of Commerce&nbsp;</span>
+      <span>in Russia Saint-Petersburg</span>
+    </h1>
+  </header>
+  <nav>
+    <button id="js-mob-menu-btn"></button>
+    <ul>
+      <li><a href="./">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="#">Directory</a></li>
+      <li><a class="active" href="join.html">Join</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="content-wrapper">
+      <p>Thank you for submitting the join application form!</p>
+      <p class="mt15 mb10">Here is the form data:</p>
+      <ul id="js-form-result"></ul>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-logo-container">
+      <a class="logo-link" href="index.html">
+        <img class="logo-img" src="images/chamber-logo.webp"
+          alt="Logo of Chamber of commerce in Russia, Saint-Petersburg">
+      </a>
+      <p class="site-name">
+        <span>Chamber of Commerce&nbsp;</span>
+        <span>in Russia Saint-Petersburg</span>
+      </p>
+      <p class="footer-address">Lenina street, building 1, office 1, 191190</p>
+    </div>
+    <div class="footer-contacts-container">
+      <a href="#" class="footer-contacts">info@saint-petersburgcc.org</a>
+      <a href="#" class="footer-contacts">+(111) 2222-3333</a>
+      <a href="#" class="footer-contacts">Location Map</a>
+    </div>
+    <div class="footer-info-container">
+      <p class="footer-info-line">©<span id="js-copyright-year">2024</span> Chamber of Commerce</p>
+      <p class="footer-info-line footer-author">Egor Sotnikov</p>
+      <a href="https://abuddabi.github.io/wdd230/" class="footer-info-line">WDD 230 Project</a>
+      <p class="footer-info-line">Last Modification: <span id="js-last-mod"></span></p>
+    </div>
+  </footer>
+</body>
+
+</html>

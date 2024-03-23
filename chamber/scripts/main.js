@@ -94,6 +94,28 @@ function checkVisits() {
   localStorage.setItem(visitsLSKey, now);
 }
 
+function formOnJoinPage() {
+  const form = document.querySelector("#js-join-form");
+  if (!form) return;
+
+  form.querySelector("#js-timestamp").value = new Date().getTime();
+
+}
+
+function thankyouPage() {
+  const paramsList = document.querySelector("#js-form-result");
+  if (!paramsList) return;
+
+  const searchParams = new URLSearchParams(window.location.search);
+  for (const param of searchParams.entries()) {
+    const li = document.createElement("li");
+    li.innerHTML = `${param[0]}: ${param[1]}`;
+    paramsList.appendChild(li);
+  }
+}
+
 /* RUN SECTION */
 updateCalendar();
 checkVisits();
+formOnJoinPage();
+thankyouPage();
