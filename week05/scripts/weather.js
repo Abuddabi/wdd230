@@ -3,23 +3,28 @@ import { WEATHER_API_KEY } from '../../env.js';
 let apiKey = WEATHER_API_KEY;
 
 if (apiKey === "WEATHER_API_KEY_PLACEHOLDER") {
-  const main = document.querySelector("main");
-  const bufferHTML = main.innerHTML;
-  const keyId = "js-api-key";
-  const submitId = "js-api-submit";
-  main.innerHTML = `
-    <p>Please, paste the API key:</p>
-    <input type="text" id="${keyId}">
-    <input id="${submitId}" type="submit" value="Submit">
-    <p>------------------</p>
-  `;
-  const submit = main.querySelector(`#${submitId}`);
-  submit.addEventListener("click", async () => {
-    apiKey = main.querySelector(`#${keyId}`).value;
-    const data = await apiFetch();
-    main.innerHTML = bufferHTML;
-    displayResults(data);
-  });
+  const weatherAPI_LSkey = "WEATHER_API_KEY";
+  apiKey = localStorage.getItem(weatherAPI_LSkey);
+
+  if (!apiKey) {
+    const main = document.querySelector("main");
+    const bufferHTML = main.innerHTML;
+    const keyId = "js-api-key";
+    const submitId = "js-api-submit";
+    main.innerHTML = `
+      <p>Please, paste the API key:</p>
+      <input type="text" id="${keyId}">
+      <input id="${submitId}" type="submit" value="Submit">
+      <p>------------------</p>
+    `;
+    const submit = main.querySelector(`#${submitId}`);
+    submit.addEventListener("click", async () => {
+      apiKey = main.querySelector(`#${keyId}`).value;
+      const data = await apiFetch();
+      main.innerHTML = bufferHTML;
+      displayResults(data);
+    });
+  } else getWeather();
 } else {
   getWeather();
 }
