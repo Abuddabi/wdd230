@@ -15,4 +15,4 @@ jobs:
 
       - name: Build
         run: |
-          sed -i "s/WEATHER_API_KEY/${WEATHER_API_KEY}/g" /week05/scripts/weather.js
+          sed -i "s/WEATHER_API_KEY/${WEATHER_API_KEY}/g" week05/scripts/weather.js
