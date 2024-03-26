@@ -1,0 +1,18 @@
+name: CI
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          sed -i "s/WEATHER_API_KEY/${WEATHER_API_KEY}/g" /week05/scripts/weather.js
