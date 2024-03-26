@@ -21,6 +21,7 @@ if (apiKey === "WEATHER_API_KEY_PLACEHOLDER") {
     submit.addEventListener("click", async () => {
       apiKey = main.querySelector(`#${keyId}`).value;
       const data = await apiFetch();
+      localStorage.setItem(weatherAPI_LSkey, apiKey);
       main.innerHTML = bufferHTML;
       displayResults(data);
     });
