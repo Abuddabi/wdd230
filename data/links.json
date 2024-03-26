@@ -1,0 +1,101 @@
+{
+  "weeks": [
+    {
+      "week": "Week 01",
+      "links": [
+        {
+          "url": "week01/holygrail.html",
+          "title": "Layout"
+        },
+        {
+          "url": "week01/media-query.html",
+          "title": "Media Query"
+        },
+        {
+          "url": "https://codepen.io/Abuddabi/pen/MWRgVYe",
+          "title": "JS Pen"
+        }
+      ]
+    },
+    {
+      "week": "Week 02",
+      "links": [
+        {
+          "url": "week02/design.html",
+          "title": "Design"
+        },
+        {
+          "url": "https://codepen.io/Abuddabi/pen/JjVYGqm",
+          "title": "Hamburger"
+        },
+        {
+          "url": "week02/bom.html",
+          "title": "BOM"
+        }
+      ]
+    },
+    {
+      "week": "Week 03",
+      "links": [
+        {
+          "url": "week03/images/landscape.webp",
+          "title": "WebP"
+        },
+        {
+          "url": "week03/lazyload.html",
+          "title": "Lazyload"
+        },
+        {
+          "url": "week03/responsive-images.html",
+          "title": "srcset"
+        },
+        {
+          "url": "week03/bom.html",
+          "title": "localStorage"
+        }
+      ]
+    },
+    {
+      "week": "Week 04",
+      "links": [
+        {
+          "url": "https://codepen.io/Abuddabi/pen/eYovBRo?editors=1100",
+          "title": "Pseudo classes"
+        },
+        {
+          "url": "week04/images/combinators.jpg",
+          "title": "Combinator"
+        },
+        {
+          "url": "week04/tablebuild.html",
+          "title": "Table"
+        },
+        {
+          "url": "week04/form.html",
+          "title": "Form"
+        }
+      ]
+    },
+    {
+      "week": "Week 05",
+      "links": [
+        {
+          "url": "https://codepen.io/Abuddabi/pen/XWQgXea?editors=1100",
+          "title": "Pseudo elements"
+        },
+        {
+          "url": "week05/new-ward-members.json",
+          "title": "JSON"
+        },
+        {
+          "url": "week05/prophets.html",
+          "title": "Prophets"
+        },
+        {
+          "url": "week05/weather.html",
+          "title": "Weather"
+        }
+      ]
+    }
+  ]
+}

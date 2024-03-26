@@ -69,8 +69,49 @@ function checkVisits() {
   localStorage.setItem(visitsLSKey, numVisits);
 }
 
-// run section
+async function loadLinks() {
+  const list = document.querySelector("#js-learning-links");
+  if (!list) return;
+
+  // const url = "https://abuddabi.github.io/wdd230/data/links.json";
+  const url = "http://127.0.0.1:5500/data/links.json";
+
+  async function getLinks() {
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        // console.log(data);
+        return data;
+      } else {
+        throw Error(await response.text());
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function displayLinks(weeks) {
+    list.innerHTML = "";
+    weeks.forEach(w => {
+      list.innerHTML += `
+        <li>
+          <span class="week-number">${w.week}:</span>
+          <span class="week-info">
+            ${w.links.map(l => `<a href="${l.url}">${l.title}</a>`).join("")}
+          </span>
+        </li>
+      `;
+    });
+  }
+
+  const data = await getLinks();
+  displayLinks(data.weeks);
+}
+
+// RUN SECTION
 checkIfGithub();
 toggleMobileMenu();
 toggleTheme();
 checkVisits();
+loadLinks();
