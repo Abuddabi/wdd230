@@ -11,7 +11,7 @@ if (apiKey === "WEATHER_API_KEY_PLACEHOLDER") {
     <p>Please, paste the API key:</p>
     <input type="text" id="${keyId}">
     <input id="${submitId}" type="submit" value="Submit">
-    <p>-----------------</p>
+    <p>------------------</p>
   `;
   const submit = main.querySelector(`#${submitId}`);
   submit.addEventListener("click", async () => {
