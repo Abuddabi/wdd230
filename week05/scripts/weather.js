@@ -6,8 +6,8 @@ const captionDesc = document.querySelector('figcaption');
 
 const lat = "49.75";
 const lon = "6.64";
-// let apiKey = WEATHER_API_KEY ? WEATHER_API_KEY : process.env.WEATHER_API_KEY;
-const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=imperial`;
+let apiKey = WEATHER_API_KEY ? WEATHER_API_KEY : process.env.WEATHER_API_KEY;
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
 async function apiFetch() {
   try {
