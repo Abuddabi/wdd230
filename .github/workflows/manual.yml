@@ -18,7 +18,7 @@ jobs:
 
       - name: Build
         run: |
-          sed -i "s/WEATHER_API_KEY/${WEATHER_API_KEY}/g" public/main.js
+          sed -i "s/WEATHER_API_KEY/${WEATHER_API_KEY}/g" public/week05/scripts/weather.js
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
