@@ -1,0 +1,13 @@
+{
+  "The family name": "John",
+  "The date the family moved into the ward": "01.01.2024",
+  "Number of people in the family (number of records)": 1,
+  "Visited by bishopric?": true,
+  "Individual family members": [
+    {
+      "Name": "John",
+      "Gender": "M",
+      "Birthdate": "01.01.2000"
+    }
+  ]
+}
