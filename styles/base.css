@@ -21,6 +21,7 @@ body.themeDark {
 * {
   padding: 0;
   margin: 0;
+  max-width: 100%;
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
 }
@@ -41,6 +42,14 @@ option {
 
 ul {
   list-style: none;
+}
+
+.m5 {
+  margin: 5px;
+}
+
+.p8 {
+  padding: 8px;
 }
 
 header {
@@ -283,4 +292,25 @@ footer p:first-child > span {
   margin-top: 10px;
   color: yellow;
   font-size: 14px;
+}
+
+.mw66 {
+  max-width: 66%;
+}
+
+.weather-line {
+  min-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-line img {
+  background-color: white;
+  margin: 8px;
+}
+
+.weather-line > p {
+  width: 100%;
 }
