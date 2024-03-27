@@ -69,7 +69,7 @@ function checkVisits() {
   localStorage.setItem(visitsLSKey, numVisits);
 }
 
-async function loadLinks() {
+function loadLinks() {
   const list = document.querySelector("#js-learning-links");
   if (!list) return;
 
@@ -108,7 +108,7 @@ async function loadLinks() {
   getLinks();
 }
 
-async function loadWeather() {
+function loadWeather() {
   const weatherBlock = document.querySelector("#js-weather");
   if (!weatherBlock) return;
 
