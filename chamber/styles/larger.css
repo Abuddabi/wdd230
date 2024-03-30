@@ -85,6 +85,19 @@
     padding-bottom: 40px;
   }
 
+  /* Directory Page */
+  .directories-container[data-view="grid"] .cards-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .directories-container[data-view="list"] .directory-card {
+    display: flex;
+  }
+
+  .directories-container[data-view="list"] .directory-card > * {
+    width: 25%;
+  }
+
   /* Should be in 850px media query */
   .site-name {
     flex-direction: row;

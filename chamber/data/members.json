@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Sberbank",
+    "address": "Lenina street, 3",
+    "phone": "333-222-111",
+    "website": "https://sberbank.com",
+    "image": "sberbank.webp",
+    "membership": "bronze",
+    "otherInfo": "This is a bank."
+  },
+  {
+    "name": "Gazprom",
+    "address": "Lenina street, 4",
+    "phone": "444-333-222",
+    "website": "https://gazprom.com",
+    "image": "gazprom.webp",
+    "membership": "gold",
+    "otherInfo": "Big company from Russia"
+  },
+  {
+    "name": "Lukoil",
+    "address": "Lenina street, 5",
+    "phone": "555-444-333",
+    "website": "https://lukoil.com",
+    "image": "lukoil.webp",
+    "membership": "gold",
+    "otherInfo": "They make Gas in in Russia"
+  },
+  {
+    "name": "Magnit",
+    "address": "Lenina street, 6",
+    "phone": "666-555-444",
+    "website": "https://magnit.com",
+    "image": "magnit.webp",
+    "membership": "silver",
+    "otherInfo": "A big grocery chain in Russia."
+  },
+  {
+    "name": "Rostelekom",
+    "address": "Lenina street, 7",
+    "phone": "777-666-555",
+    "website": "https://rt.ru",
+    "image": "rostelekom.webp",
+    "membership": "Bronze",
+    "otherInfo": "A big digital service provider in Russia."
+  },
+  {
+    "name": "Aeroflot",
+    "address": "Lenina street, 8",
+    "phone": "888-777-666",
+    "website": "https://aeroflot.ru",
+    "image": "aeroflot.webp",
+    "membership": "gold",
+    "otherInfo": "Russian airline."
+  },
+  {
+    "name": "Lenta",
+    "address": "Lenina street, 9",
+    "phone": "999-888-777",
+    "website": "https://lenta.com",
+    "image": "lenta.webp",
+    "membership": "gold",
+    "otherInfo": "Hypermarket chain from Russia."
+  }
+]

@@ -114,8 +114,63 @@ function thankyouPage() {
   }
 }
 
+function directoryPage() {
+  const container = document.querySelector("#js-directories-container");
+  if (!container) return;
+
+  function loadMembers() {
+    const baseURL = window.location.hostname.includes("github") ? "https://abuddabi.github.io/wdd230/" : "http://127.0.0.1:5500/";
+    const url = `${baseURL}/chamber/data/members.json`;
+
+    async function getMembers() {
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          const data = await response.json();
+          // console.log(data);
+          displayMembers(data);
+        } else {
+          throw Error(await response.text());
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    function displayMembers(members) {
+      container.querySelector("#js-cards-wrapper").innerHTML += members.map(m => `
+        <div class="directory-card">
+          <div class="directory-img-container">
+            <img class="directory-img" src="images/directories/${m.image}" alt="Logo of ${m.name}. ${m.otherInfo}." width="300" height="200" loading="lazy">
+          </div>
+          <p>${m.name}</p>
+          <p>${m.address}</p>
+          <p>${m.phone}</p>
+          <a href="${m.website}">${m.website}</a>
+        </div>
+      `).join("");
+    }
+
+    getMembers();
+  }
+
+  function changeView() {
+    const toGrid = container.querySelector("#js-to-grid");
+    const toList = container.querySelector("#js-to-list");
+
+    [toGrid, toList].forEach(btn => btn.addEventListener("click", function () {
+      if (this.dataset.view === container.dataset.view) return;
+      container.dataset.view = this.dataset.view;
+    }));
+  }
+
+  loadMembers();
+  changeView();
+}
+
 /* RUN SECTION */
 updateCalendar();
 checkVisits();
 formOnJoinPage();
 thankyouPage();
+directoryPage();

@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Chamber of Commerce in Russia, Saint-Petersburg</title>
-  <meta name="description" content="The Chamber of Commerce in Russia, Saint-Petersburg">
+  <title>The Chamber of Commerce in Russia, Saint-Petersburg. Directory page.</title>
+  <meta name="description" content="Here you can find Directories of the Chamber of Commerce.">
   <meta name="author" content="Egor Sotnikov">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -13,7 +13,7 @@
   <meta property="og:description" content="The Chamber of Commerce in Russia, Saint-Petersburg">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://abuddabi.github.io/wdd230/chamber/images/chamber-logo.webp">
-  <meta property="og:url" content="https://abuddabi.github.io/wdd230/chamber/">
+  <meta property="og:url" content="https://abuddabi.github.io/wdd230/chamber/directory.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
   <script src="scripts/main.js" defer></script>
 </head>
 
-<body>
+<body class="directory-page">
   <header>
     <a class="logo-link header-logo" href="index.html">
       <img class="logo-img" src="images/chamber-logo.webp"
@@ -40,65 +40,21 @@
   <nav>
     <button id="js-mob-menu-btn"></button>
     <ul>
-      <li><a class="active" href="./">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="discover.html">Discover</a></li>
-      <li><a href="directory.html">Directory</a></li>
+      <li><a class="active" href="directory.html">Directory</a></li>
       <li><a href="join.html">Join</a></li>
     </ul>
   </nav>
   <main>
-    <div class="hero-container">
-      <img class="hero-img" src="images/hero.webp" alt="Chamber of commerce. Hero image.">
-      <a href="join.html" class="btn btn-join">Join the Chamber</a>
-    </div>
-    <div class="home-sections-container">
-      <section class="home-section events">
-        <h2 class="home-section-header">Events</h2>
-        <div class="home-section-content">
-          <p class="bold">Ribbon Cutting - The Diamond Shack</p>
-          <p>Join us for the grand opening of The Diamond Shack, Thursday at 1:00 p.m.</p>
-          <a href="#" class="more-info">more info...</a>
-        </div>
-      </section>
-      <section class="home-section weather">
-        <h2 class="home-section-header">Weather</h2>
-        <div class="home-section-content">
-          <div class="weather-icon">⛅</div>
-          <div class="weather-temp">33°C</div>
-          <div class="weather-desc bold">Partly cloudy</div>
-          <div class="weather-hum">Humidity:</div>
-          <div class="weather-hum-value">35%</div>
-          <div class="weather-wind">Wind Chill:</div>
-          <div class="weather-wind-value">N/A</div>
-        </div>
-      </section>
-    </div>
-    <section class="spotlights-section">
-      <h2 class="spotlights-header">Member Spotlights</h2>
-      <div class="spotlight-items-container">
-        <div class="spotlight-item">
-          <h3 class="spotlight-header">Thankful Transport</h3>
-          <p class="spotlight-slogan">"We get it there for you!"</p>
-          <a href="#" class="spotlight-contacts">hello@thankfultransport.com</a>
-          <a href="#" class="spotlight-contacts">+999-9999-9999</a>
-          <a href="#" class="spotlight-contacts">Website</a>
-        </div>
-        <div class="spotlight-item">
-          <h3 class="spotlight-header">Code Primera</h3>
-          <p class="spotlight-slogan">After school coding!</p>
-          <a href="#" class="spotlight-contacts">contact@codeprimera.com</a>
-          <a href="#" class="spotlight-contacts">+999-9999-9999</a>
-          <a href="#" class="spotlight-contacts">Website</a>
-        </div>
-        <div class="spotlight-item">
-          <h3 class="spotlight-header">Build A Treefort</h3>
-          <p class="spotlight-slogan">Over 1000 Plans!</p>
-          <a href="#" class="spotlight-contacts">builda@treefort.com</a>
-          <a href="#" class="spotlight-contacts">+888-8888-8888</a>
-          <a href="#" class="spotlight-contacts">Website</a>
-        </div>
+    <h2>Business Directory</h2>
+    <div id="js-directories-container" class="directories-container" data-view="list">
+      <div class="view-toggle-list">
+        <div id="js-to-grid" class="view-toggle to-grid" data-view="grid"></div>
+        <div id="js-to-list" class="view-toggle to-list" data-view="list"></div>
       </div>
-    </section>
+      <div id="js-cards-wrapper" class="cards-wrapper"></div>
+    </div>
   </main>
   <footer>
     <div class="footer-logo-container">
