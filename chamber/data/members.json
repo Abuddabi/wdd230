@@ -6,7 +6,7 @@
     "website": "https://sberbank.com",
     "image": "sberbank.webp",
     "membership": "bronze",
-    "otherInfo": "This is a bank."
+    "otherInfo": "This is a bank"
   },
   {
     "name": "Gazprom",
@@ -33,7 +33,7 @@
     "website": "https://magnit.com",
     "image": "magnit.webp",
     "membership": "silver",
-    "otherInfo": "A big grocery chain in Russia."
+    "otherInfo": "A big grocery chain in Russia"
   },
   {
     "name": "Rostelekom",
@@ -42,7 +42,7 @@
     "website": "https://rt.ru",
     "image": "rostelekom.webp",
     "membership": "Bronze",
-    "otherInfo": "A big digital service provider in Russia."
+    "otherInfo": "A big digital service provider in Russia"
   },
   {
     "name": "Aeroflot",
@@ -51,7 +51,7 @@
     "website": "https://aeroflot.ru",
     "image": "aeroflot.webp",
     "membership": "gold",
-    "otherInfo": "Russian airline."
+    "otherInfo": "Russian airline"
   },
   {
     "name": "Lenta",
@@ -60,6 +60,6 @@
     "website": "https://lenta.com",
     "image": "lenta.webp",
     "membership": "gold",
-    "otherInfo": "Hypermarket chain from Russia."
+    "otherInfo": "Hypermarket chain from Russia"
   }
 ]
