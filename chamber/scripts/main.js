@@ -18,14 +18,16 @@ function loadWeather() {
   if (!apiKey) {
     const inputId = "js-weather-api";
     const submitId = "js-weather-submit";
+    const backupHTML = weatherContainer.innerHTML;
     weatherContainer.innerHTML = `
-      <p class="m5">Please, paste the API key for the weather request:</p>
-      <input class="p8 mw66" type="text" id="${inputId}">
-      <input class="m5 p8" type="submit" id="${submitId}" value="Submit">
+      <p class="mb10">Please, paste the API key for the weather request:</p>
+      <input class="p8 mb10" type="text" id="${inputId}">
+      <input class="p8 mb10" type="submit" id="${submitId}" value="Submit">
     `;
     document.querySelector(`#${submitId}`).addEventListener("click", () => {
       apiKey = document.querySelector(`#${inputId}`).value;
       localStorage.setItem(weatherAPI_LSkey, apiKey);
+      weatherContainer.innerHTML = backupHTML;
       apiFetch();
     });
   } else {
