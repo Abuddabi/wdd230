@@ -62,6 +62,10 @@
     padding: 0 20px;
   }
 
+  .banner {
+    max-width: 500px;
+  }
+
   /* Join Page */
 
   .join-page .content-wrapper {

@@ -93,26 +93,54 @@ function loadWeather() {
   }
 }
 
+function banner() {
+  const bannerWrapper = document.querySelector("#js-banner");
+  if (!bannerWrapper) return;
+
+  const body = document.querySelector("body");
+  const bodyOpenBannerClass = "js-banner-active";
+
+  const today = new Date().getDay();
+  const daysForBanner = [1, 2, 3]; // 0 - Sunday,  1 - Monday etc.
+  if (daysForBanner.includes(today)) {
+    bannerWrapper.classList.add("active");
+    body.classList.add(bodyOpenBannerClass);
+  }
+
+  function closeBanner() {
+    bannerWrapper.classList.remove("active");
+    body.classList.remove(bodyOpenBannerClass);
+  }
+  const close = bannerWrapper.querySelector("#js-close-banner");
+  close.addEventListener("click", closeBanner);
+
+  bannerWrapper.addEventListener("click", function (event) {
+    if (event.target === this) closeBanner();
+  });
+}
+
 async function loadSpotlights() {
-  const spotlights = document.querySelector("#js-spotlights");
-  if (!spotlights) return;
+  const spotlightsBlock = document.querySelector("#js-spotlights");
+  if (!spotlightsBlock) return;
 
   let members = await getMembers();
   if (!members) return;
   else {
     members = members.filter(m => m.membership === "silver" || m.membership === "gold");
-    const onlyThree = [];
-    for (let i = 0; i < 3; i++) {
+    const spotlights = [];
+    const twoOrThree = Math.round(Math.random() + 2);
+
+    for (let i = 0; i < twoOrThree; i++) {
       const randomIndex = Math.floor(Math.random() * members.length);
-      onlyThree.push(members[randomIndex]);
+      spotlights.push(members[randomIndex]);
       members.splice(randomIndex, 1);
     }
-    displaySpotlights(onlyThree);
+    displaySpotlights(spotlights);
   }
 
   function displaySpotlights(members) {
     members.forEach(m => {
-      spotlights.innerHTML += `
+      spotlightsBlock.innerHTML += `
         <div class="js-spotlight-item">
           <h3>${m.name}</h3>
           <p class="tar mb10">${m.address}</p>
@@ -289,6 +317,7 @@ function directoryPage() {
 }
 
 /* RUN SECTION */
+banner();
 loadWeather();
 loadSpotlights();
 updateCalendar();
