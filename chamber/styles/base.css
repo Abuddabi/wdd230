@@ -40,6 +40,10 @@ h4 {
   font-weight: 600;
 }
 
+.tar {
+  text-align: right;
+}
+
 .mt15 {
   margin-top: 15px;
 }
@@ -196,24 +200,32 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.weather .home-section-content {
+.weather-today {
   display: grid;
-  grid-template: repeat(4, 1fr) / 1fr 1fr;
+  grid-template: 1fr 1fr / 1fr 1fr;
   column-gap: 10px;
+  padding: 15px 0 5px;
 }
 
-.weather .weather-icon {
+.js-weather-icon {
+  display: inline-block;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   font-size: 38px;
   line-height: 100%;
-  padding-top: 10px;
+  margin: 0 auto;
+  background-color: var(--white);
 }
 
-.weather-icon,
-.weather-hum,
-.weather-wind {
-  text-align: right;
+.weather-forecast {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.weather-forecast div {
+  text-align: center;
+  padding: 5px 0;
 }
 
 .spotlights-section {
@@ -226,27 +238,19 @@ nav a:hover {
   color: var(--blue);
 }
 
-.spotlight-item {
+.js-spotlight-item {
   background-color: var(--gray);
   margin-top: 20px;
   padding: 15px;
   box-shadow: -1px 2px 12px -2px var(--black);
 }
 
-.spotlight-header {
-  font-size: 18px;
-}
-
-.spotlight-slogan {
-  text-align: right;
-  margin-bottom: 8px;
-}
-
-.spotlight-contacts {
+.js-spotlight-item a {
   display: block;
   text-decoration: none;
   text-align: center;
   color: var(--blue);
+  padding: 10px 0;
 }
 
 footer {

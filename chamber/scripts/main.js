@@ -8,6 +8,122 @@ mobMenuBtn.addEventListener("click", function () {
 const lastModifiedEl = document.querySelector("#js-last-mod");
 lastModifiedEl.textContent = document.lastModified;
 
+function loadWeather() {
+  const weatherContainer = document.querySelector("#js-weather");
+  if (!weatherContainer) return;
+
+  const weatherAPI_LSkey = "WEATHER_API_KEY";
+  let apiKey = localStorage.getItem(weatherAPI_LSkey);
+
+  if (!apiKey) {
+    const inputId = "js-weather-api";
+    const submitId = "js-weather-submit";
+    weatherContainer.innerHTML = `
+      <p class="m5">Please, paste the API key for the weather request:</p>
+      <input class="p8 mw66" type="text" id="${inputId}">
+      <input class="m5 p8" type="submit" id="${submitId}" value="Submit">
+    `;
+    document.querySelector(`#${submitId}`).addEventListener("click", () => {
+      apiKey = document.querySelector(`#${inputId}`).value;
+      localStorage.setItem(weatherAPI_LSkey, apiKey);
+      apiFetch();
+    });
+  } else {
+    apiFetch();
+  }
+
+  async function apiFetch() {
+    const lat = "59.94";
+    const lon = "30.36";
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        // console.log(data);
+        displayResults(data);
+      } else {
+        throw Error(await response.text());
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function displayResults(data) {
+    displayTodaysWeather(data);
+    displayForecast(data);
+  }
+
+  function displayTodaysWeather(data) {
+    const todayData = data.list[0];
+    let description = todayData.weather[0].description;
+    description = description.charAt(0).toUpperCase() + description.slice(1);
+    const icon = todayData.weather[0].icon;
+    const iconURL = `https://openweathermap.org/img/w/${icon}.png`;
+
+    const weatherToday = weatherContainer.querySelector("#js-weather-today");
+    weatherToday.innerHTML = `
+      <img class="js-weather-icon" src="${iconURL}" alt="Weather icon - ${description}.">
+      <div>${todayData.main.temp}&deg;C</div>
+      <div class="bold">${description}</div>
+    `;
+  }
+
+  function displayForecast(data) {
+    function getDate(data) {
+      const timestamp = data.dt * 1000;
+      const date = new Date(timestamp);
+      return `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}`;
+    }
+
+    const weatherForecast = weatherContainer.querySelector("#js-weather-forecast");
+    const daysAmount = 3;
+    const indexRange = 8; // forecast for every 3 hours. 3 * 8 = 24 - a day.
+
+    for (let i = indexRange; i <= (indexRange * daysAmount); i += indexRange) {
+      weatherForecast.innerHTML += `
+        <div>
+          <div class="bold">${getDate(data.list[i])}</div>
+          <div>${data.list[i].main.temp}&deg;C</div>
+        </div>
+      `;
+    }
+  }
+}
+
+async function loadSpotlights() {
+  const spotlights = document.querySelector("#js-spotlights");
+  if (!spotlights) return;
+
+  let members = await getMembers();
+  if (!members) return;
+  else {
+    members = members.filter(m => m.membership === "silver" || m.membership === "gold");
+    const onlyThree = [];
+    for (let i = 0; i < 3; i++) {
+      const randomIndex = Math.floor(Math.random() * members.length);
+      onlyThree.push(members[randomIndex]);
+      members.splice(randomIndex, 1);
+    }
+    displaySpotlights(onlyThree);
+  }
+
+  function displaySpotlights(members) {
+    members.forEach(m => {
+      spotlights.innerHTML += `
+        <div class="js-spotlight-item">
+          <h3>${m.name}</h3>
+          <p class="tar mb10">${m.address}</p>
+          <a href="tel:${m.phone}">${m.phone}</a>
+          <a href="${m.website}">${m.website}</a>
+        </div>
+      `;
+    });
+  }
+}
+
 function getMonthInfo(monthIndex, year) {
   const monthInfo = {};
 
@@ -114,28 +230,32 @@ function thankyouPage() {
   }
 }
 
+async function getMembers() {
+  const baseURL = window.location.hostname.includes("github") ? "https://abuddabi.github.io/wdd230/" : "http://127.0.0.1:5500/";
+  const url = `${baseURL}/chamber/data/members.json`;
+
+  try {
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      // console.log(data);
+      return data;
+    } else {
+      throw Error(await response.text());
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 function directoryPage() {
   const container = document.querySelector("#js-directories-container");
   if (!container) return;
 
-  function loadMembers() {
-    const baseURL = window.location.hostname.includes("github") ? "https://abuddabi.github.io/wdd230/" : "http://127.0.0.1:5500/";
-    const url = `${baseURL}/chamber/data/members.json`;
-
-    async function getMembers() {
-      try {
-        const response = await fetch(url);
-        if (response.ok) {
-          const data = await response.json();
-          // console.log(data);
-          displayMembers(data);
-        } else {
-          throw Error(await response.text());
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
+  async function loadMembers() {
+    const members = await getMembers();
+    if (!members) return;
+    else displayMembers(members);
 
     function displayMembers(members) {
       container.querySelector("#js-cards-wrapper").innerHTML += members.map(m => `
@@ -169,6 +289,8 @@ function directoryPage() {
 }
 
 /* RUN SECTION */
+loadWeather();
+loadSpotlights();
 updateCalendar();
 checkVisits();
 formOnJoinPage();
