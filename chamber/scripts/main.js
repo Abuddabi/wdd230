@@ -99,6 +99,7 @@ function banner() {
   const bannerWrapper = document.querySelector("#js-banner");
   if (!bannerWrapper) return;
 
+  window.scrollTo(0, 0); // scroll to top
   const body = document.querySelector("body");
   const bodyOpenBannerClass = "js-banner-active";
 
