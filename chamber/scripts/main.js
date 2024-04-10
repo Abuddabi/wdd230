@@ -175,8 +175,9 @@ function updateCalendar() {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
   const currentDay = currentDate.getDate();
+  const currentYear = currentDate.getFullYear();
   let monthIndex = currentMonth;
-  let year = 2024;
+  let year = currentYear;
 
   function populateCalendar(monthIndex) {
     const monthInfo = getMonthInfo(monthIndex, year);
@@ -191,7 +192,9 @@ function updateCalendar() {
     for (let i = 1; i <= monthInfo.daysInMonth; i++) {
       const span = document.createElement("span");
       span.textContent = i;
-      if (monthIndex == currentMonth && i == currentDay) span.classList.add("current");
+      if (i === currentDay && monthIndex === currentMonth && year === currentYear) {
+        span.classList.add("current");
+      }
       datesContainer.appendChild(span);
     }
   }
